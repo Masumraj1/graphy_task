@@ -1,4 +1,4 @@
 class AppStrings {
   ///============================= Authentication ================================
-  static const welcomeTo = "Welcome to";
+  static const allProduct = "All Product";
 }

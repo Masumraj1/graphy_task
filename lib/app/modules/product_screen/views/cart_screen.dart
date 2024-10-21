@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:graphy_task/app/modules/product_screen/controllers/home_controller.dart';
+import 'package:graphy_task/app/modules/product_screen/controllers/product_controller.dart';
 
 class CartScreen extends StatelessWidget {
   final ProductController controller = Get.find<ProductController>();
