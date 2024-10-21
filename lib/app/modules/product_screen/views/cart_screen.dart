@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:graphy_task/app/global/widgets/custom_text.dart';
 import 'package:graphy_task/app/modules/product_screen/controllers/product_controller.dart';
+import 'package:graphy_task/app/utils/app_colors.dart';
+import 'package:graphy_task/app/utils/app_strings.dart';
 
 class CartScreen extends StatelessWidget {
   final ProductController controller = Get.find<ProductController>();
@@ -11,8 +14,14 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Shopping Cart"),
-      ),
+        centerTitle: true,
+        title: const CustomText(
+          text: AppStrings.shoppingCart,
+          color: AppColors.blackDeep,
+          fontWeight: FontWeight.w500,
+          fontSize: 17,
+        ),),
+
       body: Obx(() {
         if (controller.cart.isEmpty) {
           return const Center(child: Text("Cart is Empty"));
@@ -38,11 +47,21 @@ class CartScreen extends StatelessWidget {
                   },
                 ),
               ),
+
+              ///============================Total Button===============
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Total: \$${controller.totalPrice.value}',
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CustomText(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      text:
+                      'Total: \$${controller.totalPrice.value}',
+
+                    ),
+                  ),
                 ),
               ),
             ],
