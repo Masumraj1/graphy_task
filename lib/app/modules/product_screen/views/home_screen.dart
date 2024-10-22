@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: Obx(() {
           if (controller.products.isEmpty) {
-            return const Center(child: CustomLoader());
+            return const Center(child: CircularProgressIndicator());
           } else {
             return ListView.builder(
               itemCount: controller.products.length,
